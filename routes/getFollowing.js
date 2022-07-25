@@ -1,31 +1,30 @@
+/* eslint-disable camelcase */
 import api from "../index.js";
 
 async function getFollowing(userID) {
-    const endpointURL = `users/${userID}/following`;
+  const endpointURL = `users/${userID}/following`;
 
-    let userFollowing = []
+  let userFollowing = [];
 
-    let pagination_token, result_count;
+  let pagination_token;
 
-    do{
-        const res = await api.get(endpointURL, {
-            params: {
-                "pagination_token": pagination_token
-            }
-        })
+  do {
+    const res = await api.get(endpointURL, {
+      params: {
+        "pagination_token": pagination_token,
+      },
+    });
 
-        //Update pagination_token and result_count
-        result_count = res.data.meta.result_count
-        pagination_token = res.data.meta.next_token
+    // Update pagination_token and result_count
+    pagination_token = res.data.meta.next_token;
 
-        userFollowing = userFollowing.concat(res.data.data)
+    userFollowing = userFollowing.concat(res.data.data);
+  } while (pagination_token);
 
-    } while(pagination_token)
-
-    return userFollowing; //Array of user
+  return userFollowing; // Array of user
 }
 
 export default getFollowing;
 
-//TEST
+// TEST
 // getFollowing("userid")

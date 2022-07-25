@@ -1,11 +1,13 @@
-import * as fs from 'fs';
-import getRetweet from '../routes/getRetweet.js';
+/* eslint-disable no-unused-vars */
+import * as fs from "fs";
+import getRetweet from "../routes/getRetweet.js";
 import getUserByUsername from "../routes/getUserByUsername.js";
 import getQuoteTweet from "../routes/getQuoteTweet.js";
 import getLike from "../routes/getLike.js";
 import getFollowing from "../routes/getFollowing.js";
 import getReply from "../routes/getReply.js";
-//FIXME: fix route (add main route >> access subroute) 
+
+// FIXME: fix route (add main route >> access subroute)
 
 // Get user By Username
 // getUserByUsername('username')
@@ -14,7 +16,7 @@ import getReply from "../routes/getReply.js";
 //     })
 //     .catch((err) => console.error(err))
 
-//Get retweet
+// Get retweet
 // getRetweet("tweet_id")
 //     .then((res) => {
 //         //Convert array of object to string
@@ -22,7 +24,7 @@ import getReply from "../routes/getReply.js";
 //         write(res);
 //     }).catch((err) => console.error(err))
 
-//Get quoute tweet
+// Get quoute tweet
 // getQuoteTweet("tweet_id")
 //     .then((res) => {
 //         //Convert array of object to string
@@ -30,7 +32,7 @@ import getReply from "../routes/getReply.js";
 //         write(res);
 //     }).catch((err) => console.error(err))
 
-//Get like
+// Get like
 // getLike("tweet_id")
 //     .then((res) => {
 //         //Convert array of object to string
@@ -38,7 +40,7 @@ import getReply from "../routes/getReply.js";
 //         write(res);
 //     }).catch((err) => console.error(err))
 
-//Get following
+// Get following
 // getFollowing("userid")
 //     .then((res) => {
 //         //Convert array of object to string
@@ -46,7 +48,7 @@ import getReply from "../routes/getReply.js";
 //         write(res);
 //     }).catch((err) => console.error(err))
 
-//Get reply
+// Get reply
 // getReply("tweet_id")
 //     .then((res) => {
 //         //Convert array of object to string
@@ -56,12 +58,12 @@ import getReply from "../routes/getReply.js";
 
 
 // ADDITIONAL FUNCTION
-//Write in a file
+// Write in a file
 function write(text) {
-    fs.writeFile("./output.txt", text, function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("The file was saved!");
-    });
+  fs.writeFile("./output.txt", text, function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("The file was saved!");
+  });
 }
