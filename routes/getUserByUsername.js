@@ -12,5 +12,3 @@ export default getUserByUsername;
 
 // TEST
 // getUserByUsername("username")
-
-// TODO: add params (check description, pfp, banner, created_at, latest_tweet, location, tweets_amount, ...)

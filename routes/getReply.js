@@ -28,4 +28,4 @@ async function getReply(tweet_id) {
 export default getReply;
 
 // TEST
-// getReply("twitter_id")
+// getReply("tweet_id")
